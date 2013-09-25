@@ -1,0 +1,23 @@
+{
+    "name": "anthony-vipond/stripe",
+    "description": "",
+    "authors": [
+        {
+            "name": "Anthony Vipond",
+            "email": "anthonytrading81@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "AnthonyVipond\\Stripe": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
