@@ -28,7 +28,16 @@ class StripeServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+		$this->app['stripe'] = $this->app->share(function($app)
+		{
+			return new Stripe;
+		});
+
+		$this->app->booting(function()
+		{
+			$loader = \Illuminate\Foundation\AliasLoader::getInstance();
+			$loader->alias('AnthonyVipond', 'AnthonyVipond\Stripe\Facades\Stripe');
+		});
 	}
 
 	/**
@@ -38,7 +47,7 @@ class StripeServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array();
+		return array('stripe');
 	}
 
 }
