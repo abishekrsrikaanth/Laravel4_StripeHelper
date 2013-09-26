@@ -76,6 +76,8 @@ return array(
 	'currency'			=> 'usd',
 );
 
+~~~
+
 
 ### Convenience methods to use anywhere
 
