@@ -17,7 +17,7 @@ class StripeHelper {
 		return Config::get('stripehelper::currency');
 	}
 
-	public static function charge_card($price_in_cents, $customer_id, &$message, $email)
+	public static function charge_card($price_in_cents, $customer_id, &$message  = '', $email)
     {
         try {
             $charge = Stripe_Charge::create(array(
@@ -62,7 +62,7 @@ class StripeHelper {
         }
 	}
 
-	public static function create_customer($stripe_token, $email, &$message)
+	public static function create_customer($stripe_token, $email, &$message = '')
     {
         try {
             $customer = Stripe_Customer::create(array(
