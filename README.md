@@ -76,9 +76,7 @@ return array(
 	'currency'			=> 'usd',
 );
 
-### How to Use
-
-Some convenient static methods you can use globally:
+### Convenience methods to use anywhere
 
 ~~~
 
@@ -90,15 +88,19 @@ StripeHelper::currency() // Get the currency you are charging in
 
 ~~~
 
+### Methods for creating customers and charging cards
+
 ~~~
 
-StripeHelper::create_customer( $stripe_token, $email, &$message = '' )
+StripeHelper::create_customer( $stripe_token, $email, &$message = '' );
+
 // Create a customer object from a Stripe token
 // You can initialize a $message var prior to calling this if you want a user-friendly error message for users
 // This returns the customer object on success, and return FALSE on failure.
 // Prior to returning false, it logs the error information to your database.
 
-StripeHelper::charge_card( $price_in_cents, $customer_id, &$message = '', $email )
+StripeHelper::charge_card( $price_in_cents, $customer_id, &$message = '', $email );
+
 // Charges a credit card based on a customer_id passed to it
 // You can initialize a $message var prior to calling this if you want a user-friendly error message for users
 // This returns the charge object on success, and return FALSE on failure.
