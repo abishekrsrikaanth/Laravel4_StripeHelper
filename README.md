@@ -29,15 +29,29 @@ Requires the Stripe.com PHP Library and a helper class for Stripe properties and
 
 ### Publish Javascript Assets
 
-Don't forget to include these files in your HTML (Delete jQuery if you already have it)
-
 ~~~
-
-php artisan asset:publish
 
 php artisan asset:publish anthonyvipond/stripehelper
 
 ~~~
+
+
+### Include Javascript Assets
+
+~~~
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/stripehelper.js"></script>
+
+~~~
+
+
+### Update Values in StripeHelper.js
+
+Update them in YOUR public folder. Not the VENDOR one, which is overwritten when you 'composer update'
+
+There are three lines, they are marked clearly with comments. Update them as necessary.
 
 
 ### Run Migrations
