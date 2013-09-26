@@ -1,8 +1,6 @@
 StripeHelper for Laravel 4
 ==============
 
-### THIS PACKAGE IS UNDER DEVELOPMENT. NOT READY YET FOR USAGE.
-
 Requires the Stripe.com PHP Library and a helper class for Stripe properties and methods. More to come.
 
 
