@@ -27,6 +27,19 @@ Requires the Stripe.com PHP Library and a helper class for Stripe properties and
 4. Publish the configuration files via `php artisan config:publish anthonyvipond/stripehelper`.
 
 
+### Publish Javascript Assets
+
+Don't forget to include these files in your HTML (Delete jQuery if you already have it)
+
+~~~
+
+php artisan asset:publish
+
+php artisan asset:publish anthonyvipond/stripehelper
+
+~~~
+
+
 ### Run Migrations
 
 ~~~
