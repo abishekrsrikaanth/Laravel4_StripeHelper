@@ -1,8 +1,7 @@
 <?php namespace AnthonyVipond\StripeHelper;
 
 use Illuminate\Support\ServiceProvider;
-
-include 'dependencies/stripe-php-1.8.3/lib/Stripe.php';
+use \Stripe;
 
 class StripeHelperServiceProvider extends ServiceProvider {
 
@@ -21,6 +20,9 @@ class StripeHelperServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('anthonyvipond/stripehelper');
+
+		// Set the Stripe API key.
+		Stripe::setApiKey($this->app['config']->get('stripehelper::stripe.api_key'));
 	}
 
 	/**
