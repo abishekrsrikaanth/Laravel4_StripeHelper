@@ -1,8 +1,8 @@
-<?php namespace AnthonyVipond\Stripe\Facades;
+<?php namespace AnthonyVipond\StripeHelper\Facades;
  
 use Illuminate\Support\Facades\Facade;
  
-class Stripe extends Facade {
+class StripeHelper extends Facade {
  
   /**
    * Get the registered name of the component.
@@ -10,7 +10,7 @@ class Stripe extends Facade {
    * @return string
    */
   protected static function getFacadeAccessor() { 
-  	return 'stripe'; 
+  	return 'stripehelper'; 
   }
  
 }

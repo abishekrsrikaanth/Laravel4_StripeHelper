@@ -1,8 +1,10 @@
-<?php namespace AnthonyVipond\Stripe;
+<?php namespace AnthonyVipond\StripeHelper;
 
 use Illuminate\Support\ServiceProvider;
 
-class StripeServiceProvider extends ServiceProvider {
+include 'dependencies/stripe-php-1.8.3/lib/Stripe.php';
+
+class StripeHelperServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -18,7 +20,7 @@ class StripeServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('anthony-vipond/stripe');
+		$this->package('anthonyvipond/stripehelper');
 	}
 
 	/**
@@ -28,15 +30,15 @@ class StripeServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app['stripe'] = $this->app->share(function($app)
+		$this->app['stripehelper'] = $this->app->share(function($app)
 		{
-			return new Stripe;
+			return new StripeHelper;
 		});
 
 		$this->app->booting(function()
 		{
 			$loader = \Illuminate\Foundation\AliasLoader::getInstance();
-			$loader->alias('AnthonyVipond', 'AnthonyVipond\Stripe\Facades\Stripe');
+			$loader->alias('StripeHelper', 'AnthonyVipond\StripeHelper\Facades\StripeHelper');
 		});
 	}
 
@@ -47,7 +49,7 @@ class StripeServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array('stripe');
+		return array('stripehelper');
 	}
 
 }

@@ -1,6 +1,6 @@
-<?php namespace AnthonyVipond\Stripe;
+<?php namespace AnthonyVipond\StripeHelper;
  
-class Stripe {
+class StripeHelper {
  
   public static function testing() {
     return "Testing";
