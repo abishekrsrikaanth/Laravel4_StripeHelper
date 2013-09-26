@@ -6,15 +6,15 @@ Requires the Stripe.com PHP Library and a helper class for Stripe properties and
 
 ### Installation
 
-Include stripehelper as a dependency in composer.json:
+1. Include stripehelper as a dependency in composer.json:
 
 ~~~
 "anthonyvipond/stripehelper": "dev-master"
 ~~~
 
-Run `composer install` to download the dependency.
+2. Run `composer install` to download the dependency.
 
-Add the ServiceProvider to your provider array within `app/config/app.php`:
+3. Add the ServiceProvider to your provider array within `app/config/app.php`:
 
 ~~~
 'providers' => array(
@@ -24,7 +24,16 @@ Add the ServiceProvider to your provider array within `app/config/app.php`:
 )
 ~~~
 
-Publish the configuration files via `php artisan config:publish anthonyvipond/stripehelper`.
+4. Publish the configuration files via `php artisan config:publish anthonyvipond/stripehelper`.
+
+
+### Run Migrations
+
+~~~
+
+php artisan migrate --package="anthonyvipond/stripehelper"
+
+~~~
 
 
 ### Configuration

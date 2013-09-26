@@ -15,6 +15,7 @@
     "autoload": {
         "classmap": [
             "src/migrations"
+            "src/providers"
         ],
         "psr-0": {
             "AnthonyVipond\\StripeHelper": "src/"
