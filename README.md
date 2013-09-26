@@ -76,6 +76,7 @@ return array(
 	'currency'			=> 'usd',
 );
 
+
 ### Convenience methods to use anywhere
 
 ~~~
@@ -87,6 +88,7 @@ StripeHelper::pub_key() // Get your publishable key
 StripeHelper::currency() // Get the currency you are charging in
 
 ~~~
+
 
 ### Methods for creating customers and charging cards
 
