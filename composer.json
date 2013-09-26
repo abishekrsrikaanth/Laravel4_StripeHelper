@@ -14,7 +14,7 @@
     },
     "autoload": {
         "classmap": [
-            "src/migrations"
+            "src/migrations",
             "src/providers"
         ],
         "psr-0": {
