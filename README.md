@@ -6,15 +6,15 @@ Requires the Stripe.com PHP Library and a helper class for Stripe properties and
 
 ### Installation
 
-1. Include stripehelper as a dependency in composer.json:
+- Include stripehelper as a dependency in composer.json:
 
 ~~~
 "anthonyvipond/stripehelper": "dev-master"
 ~~~
 
-2. Run `composer install` to download the dependency.
+- Run `composer install` to download the dependency.
 
-3. Add the ServiceProvider to your provider array within `app/config/app.php`:
+- Add the ServiceProvider to your provider array within `app/config/app.php`:
 
 ~~~
 'providers' => array(
@@ -24,7 +24,7 @@ Requires the Stripe.com PHP Library and a helper class for Stripe properties and
 )
 ~~~
 
-4. Publish the configuration files via `php artisan config:publish anthonyvipond/stripehelper`.
+- Publish the configuration files via `php artisan config:publish anthonyvipond/stripehelper`.
 
 
 ### Publish Javascript Assets
@@ -51,10 +51,17 @@ php artisan asset:publish anthonyvipond/stripehelper
 
 Update them in YOUR public folder. Not the VENDOR one, which is overwritten when you 'composer update'
 
+The most important being: Stripe.setPublishableKey('Your_Publishable_Key_Goes_Here');
+
 There are three lines, they are marked clearly with comments. Update them as necessary.
 
 
 ### Run Migrations
+
+# Note on Migrations:
+
+You must not have tables currently named `credit_cards`, `orders` or `payment_errors`
+If you do, that's fine, just change the migration table names/fields in /vendor/anthonyvipond/stripehelper/src/migrations as necessary
 
 ~~~
 
@@ -65,7 +72,7 @@ php artisan migrate --package="anthonyvipond/stripehelper"
 
 ### Configuration
 
-Once you have published the configuration files, you can set your API and Publishable Key in `app/config/packages/anthonyvipond/stripehelper/stripe.php`:
+Once you have published the configuration files, you can set your API and Publishable Key in `/app/config/packages/anthonyvipond/stripehelper/stripe.php`:
 If are Canadian, Irish, or English, update your currency here as necessary.
 
 ~~~
@@ -79,35 +86,34 @@ return array(
 ~~~
 
 
-### Convenience methods to use anywhere
-
-~~~
-
-StripeHelper::api_key() // Get your secret key
-
-StripeHelper::pub_key() // Get your publishable key
-
-StripeHelper::currency() // Get the currency you are charging in
-
-~~~
-
-
 ### Methods for creating customers and charging cards
 
 ~~~
 
-StripeHelper::create_customer( $stripe_token, $email, &$message = '' );
+StripeHelper::create_customer( $email, $stripe_token, &$message = '' );
 
 // Create a customer object from a Stripe token
-// You can initialize a $message var prior to calling this if you want a user-friendly error message for users
+// You can optionally initialize a $message var prior to calling this if you want a user-friendly error message for users
 // This returns the customer object on success, and return FALSE on failure.
 // Prior to returning false, it logs the error information to your database.
 
-StripeHelper::charge_card( $price_in_cents, $customer_id, &$message = '', $email );
+StripeHelper::charge_card( $email, $customer_id, $price_in_cents, &$message = '' );
 
 // Charges a credit card based on a customer_id passed to it
-// You can initialize a $message var prior to calling this if you want a user-friendly error message for users
+// You can optionally initialize a $message var prior to calling this if you want a user-friendly error message for users
 // This returns the charge object on success, and return FALSE on failure.
 // Prior to returning false, it logs the error information to your database.
 
 ~~~
+
+### Sample Controller, View, and Route methods to get you rolling
+
+# Copy from src/Controllers/purchase.php into your app/controller/purchase.php
+
+# Copy from src/Views/purchase.blade.php into your app/views/purchase.blade.php
+
+# Copy route invocations from src/routes.php into your routes.php
+
+
+
+### Review all package code inside /AnthonyVipond/StripeHelper/SRC/ and /AnthonyVipond/StripeHelper/Public/
