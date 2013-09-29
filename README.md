@@ -6,15 +6,15 @@ Requires the Stripe.com PHP Library and a helper class for Stripe properties and
 
 ### Installation
 
-- Include stripehelper as a dependency in composer.json:
+* Include stripehelper as a dependency in composer.json:
 
 ~~~
 "anthonyvipond/stripehelper": "dev-master"
 ~~~
 
-- Run `composer install` to download the dependency.
+* Run `composer install` to download the dependency.
 
-- Add the ServiceProvider to your provider array within `app/config/app.php`:
+* Add the ServiceProvider to your provider array within `app/config/app.php`:
 
 ~~~
 'providers' => array(
@@ -24,7 +24,7 @@ Requires the Stripe.com PHP Library and a helper class for Stripe properties and
 )
 ~~~
 
-- Publish the configuration files via `php artisan config:publish anthonyvipond/stripehelper`.
+* Publish the configuration files via `php artisan config:publish anthonyvipond/stripehelper`.
 
 
 ### Publish Javascript Assets
@@ -108,16 +108,18 @@ StripeHelper::charge_card( $email, $customer_id, $price_in_cents, &$message = ''
 
 ### Sample Controller, View, and Route methods to get you rolling
 
-##### -Copy from src/Controllers/purchase.php into your app/controller/purchase.php
+* Copy from src/Controllers/purchase.php into your app/controller/purchase.php
 
-##### -Copy from src/Views/purchase.blade.php into your app/views/purchase.blade.php
+* Copy from src/Views/purchase.blade.php into your app/views/purchase.blade.php
 
-##### -Copy route invocations from src/routes.php into your routes.php
+* Copy route invocations from src/routes.php into your routes.php
 
 
 
 ### Review all package code inside:
 
-#### /AnthonyVipond/StripeHelper/SRC/ 
-#### and 
-#### /AnthonyVipond/StripeHelper/Public/
+#### AnthonyVipond/StripeHelper/SRC
+
+##### and
+
+#### AnthonyVipond/StripeHelper/Public
