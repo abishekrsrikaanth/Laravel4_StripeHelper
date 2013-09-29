@@ -36,7 +36,7 @@ php artisan asset:publish anthonyvipond/stripehelper
 ~~~
 
 
-### Include Javascript Assets
+### Include Javascript Assets within your <head> tags
 
 ~~~
 
@@ -49,20 +49,22 @@ php artisan asset:publish anthonyvipond/stripehelper
 
 ### Update Values in StripeHelper.js
 
-Update them in YOUR public folder. Not the VENDOR one, which is overwritten when you 'composer update'
+Update them in YOUR public folder version (packages/anthonyvipond/stripehelper/StripeHelper.js)
+
+Not the VENDOR one, which is overwritten when you 'composer update'
 
 The most important being: Stripe.setPublishableKey('Your_Publishable_Key_Goes_Here');
 
-There are three lines, they are marked clearly with comments. Update them as necessary.
+Check the commented lines. Update them as necessary.
 
 
 ### Run Migrations (optional)
 
 Note on Migrations:
 
-You must not have tables currently named `credit_cards`, `orders` or `payment_errors`
-If you do, that's fine, just change the migration table names/fields in /vendor/anthonyvipond/stripehelper/src/migrations as necessary.
-You can also choose to not run migrations at all if you do not want anything in your database changed.
+You must not have tables currently named `credit_cards`, `orders` or `payment_errors` in your database.
+If you do not, that's fine, just change the migration table names/fields in /vendor/anthonyvipond/stripehelper/src/migrations as necessary.
+You can also choose to not run migrations at all if you do not want any database help.
 
 ~~~
 
