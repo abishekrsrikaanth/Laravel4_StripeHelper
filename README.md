@@ -118,8 +118,6 @@ StripeHelper::charge_card( $email, $customer_id, $price_in_cents, &$message = ''
 
 ### Review all package code inside:
 
-#### AnthonyVipond/StripeHelper/SRC
+* AnthonyVipond/StripeHelper/SRC
 
-##### and
-
-#### AnthonyVipond/StripeHelper/Public
+* AnthonyVipond/StripeHelper/Public
