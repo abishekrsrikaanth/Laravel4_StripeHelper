@@ -1,16 +1,15 @@
 jQuery(function($) {
 
-	Stripe.setPublishableKey('YOUR_Publishable_Key_Goes_Here'); // EDIT THIS LINE!!!
+	Stripe.setPublishableKey('Your_Publishable_Key_Goes_Here'); // EDIT THIS LINE!!!
 
 	var stripeResponseHandler = function(status, response) {
-		var $form = $('#payment-form');
+		var $form = $('#payment-form'); // If your form id is not $payment-form, update as necessary here
 
 		if (response.error) {
 			// Show the errors on the form
-			$form.find('.payment-errors').text(response.error.message); // EDIT THIS LINE!!! CREATE DIV WITH class="payment_errors" or other name to hold errors
+			$form.find('.payment-errors').text(response.error.message); // If your errors span is not .payment_errors, update as necessary here
 			$form.find('button').prop('disabled', false);
 		} else {
-			// token contains id, last4, and card type
 			var token = response.id;
 			// Insert the token into the form so it gets submitted to the server
 			$form.append($('<input type="hidden" name="stripeToken" />').val(token));
@@ -19,7 +18,7 @@ jQuery(function($) {
 		}
 	};
 
-	$('#Your_Form_Id_Goes_Here').submit(function(event) { // EDIT THIS LINE!!!
+	$('#payment-form').submit(function(event) { // If your form id is not $payment-form, update as necessary here
 		var $form = $(this);
 
 		// Disable the submit button to prevent repeated clicks
