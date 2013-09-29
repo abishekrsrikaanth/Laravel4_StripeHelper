@@ -1,7 +1,7 @@
 ##StripeHelper for Laravel 4
 ==============
 
-Requires the Stripe.com PHP Library and a helper class for Stripe properties and methods. More to come.
+Requires the Stripe.com PHP Library and has a class for working with Stripe. Comes with sample controller and view, too!
 
 
 ### Installation
@@ -24,7 +24,13 @@ Requires the Stripe.com PHP Library and a helper class for Stripe properties and
 )
 ~~~
 
-* Publish the configuration files via `php artisan config:publish anthonyvipond/stripehelper`.
+### Publish Configuration Files
+
+~~~
+
+php artisan config:publish anthonyvipond/stripehelper
+
+~~~
 
 
 ### Publish Javascript Assets
@@ -37,6 +43,8 @@ php artisan asset:publish anthonyvipond/stripehelper
 
 
 ### Include Javascript Assets within your `<head>` tags
+
+If you don't have a working project yet, skip this part, and scroll down to the next step.
 
 ~~~
 
