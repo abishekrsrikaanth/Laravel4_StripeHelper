@@ -42,7 +42,7 @@ php artisan asset:publish anthonyvipond/stripehelper
 
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="/stripehelper.js"></script>
+<script type="text/javascript" src="/packages/anthonyvipond/stripehelper/stripehelper.js"></script>
 
 ~~~
 
@@ -56,12 +56,13 @@ The most important being: Stripe.setPublishableKey('Your_Publishable_Key_Goes_He
 There are three lines, they are marked clearly with comments. Update them as necessary.
 
 
-### Run Migrations
+### Run Migrations (optional)
 
 Note on Migrations:
 
 You must not have tables currently named `credit_cards`, `orders` or `payment_errors`
-If you do, that's fine, just change the migration table names/fields in /vendor/anthonyvipond/stripehelper/src/migrations as necessary
+If you do, that's fine, just change the migration table names/fields in /vendor/anthonyvipond/stripehelper/src/migrations as necessary.
+You can also choose to not run migrations at all if you do not want anything in your database changed.
 
 ~~~
 
@@ -108,7 +109,7 @@ StripeHelper::charge_card( $email, $customer_id, $price_in_cents, &$message = ''
 
 ### Sample Controller, View, and Route methods to get you rolling
 
-* Copy from src/Controllers/purchase.php into your app/controller/purchase.php
+* Copy from src/Controllers/PurchaseController.php into your app/controller/PurchaseController.php
 
 * Copy from src/Views/purchase.blade.php into your app/views/purchase.blade.php
 
@@ -118,6 +119,6 @@ StripeHelper::charge_card( $email, $customer_id, $price_in_cents, &$message = ''
 
 ### Review all package code inside:
 
-* AnthonyVipond/StripeHelper/SRC
+* AnthonyVipond/StripeHelper/src
 
-* AnthonyVipond/StripeHelper/Public
+* AnthonyVipond/StripeHelper/public

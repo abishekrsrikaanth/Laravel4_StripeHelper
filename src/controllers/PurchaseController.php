@@ -48,7 +48,7 @@ class PurchaseController extends BaseController {
 
                 if ($order) {
                 	// Store the credit card usage in a `credit_cards` table
-                	$card = Credit_card::create(array(
+                	$card = Credit_Card::create(array(
 	                    'order_id' 		=> $order->id, // Foreign key for orders table
 						'user_id'		=> isset($user->id) ? $user->id : 'N/A', // Foreign key for users table
 	                    'processor' 	=> 'stripe',

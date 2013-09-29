@@ -23,7 +23,7 @@ class CreatePaymentErrorsTable extends Migration {
 				$table->date('date');
 			});
 		} else {
-			throw new Exception('You already have a "payment_errors" table. Delete this table, or temporarily rename it, then install this package again');
+			throw new Exception('You already have a "payment_errors" table. Delete this table, or temporarily rename it, or edit this package\'s migrations');
 		}
 	}
 
