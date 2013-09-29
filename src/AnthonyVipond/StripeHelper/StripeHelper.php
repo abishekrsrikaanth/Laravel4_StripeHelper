@@ -2,19 +2,21 @@
 
 use \Config;
 use \Payment_Error;
+use \Stripe_Charge;
+use \Stripe_Customer;
 
 class StripeHelper {
 
 	public static function api_key() {
-		return Config::get('stripehelper::api_key');
+		return Config::get('packages/AnthonyVipond/StripeHelper/stripe.api_key');
 	}
 
 	public static function pub_key() {
-		return Config::get('stripehelper::publishable_key');
+		return Config::get('packages/AnthonyVipond/StripeHelper/stripe.pub_key');
 	}
 
 	public static function currency() {
-		return Config::get('stripehelper::currency');
+		return Config::get('packages/AnthonyVipond/StripeHelper/stripe.currency');
 	}
 
     /**
@@ -29,7 +31,7 @@ class StripeHelper {
         try {
             $charge = Stripe_Charge::create(array(
             "amount"   => $price_in_cents,
-            "currency" => Config::get('stripe.currency'),
+            "currency" => self::currency(),
             "customer" => $customer_id)
             );
             return $charge;
