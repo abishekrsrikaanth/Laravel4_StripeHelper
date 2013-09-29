@@ -36,7 +36,7 @@ php artisan asset:publish anthonyvipond/stripehelper
 ~~~
 
 
-### Include Javascript Assets within your <head> tags
+### Include Javascript Assets within your `<head>` tags
 
 ~~~
 
