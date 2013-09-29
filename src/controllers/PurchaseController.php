@@ -1,5 +1,16 @@
 <?php
 
+// The following are some models that should be created for this example, or you can just leave them here and know enough they should be in /models folder.
+class Order extends Eloquent  {
+	protected $table = 'orders';
+	protected $guarded = array();
+}
+
+class Credit_Card extends Eloquent  {
+	protected $table = 'credit_cards';
+	protected $guarded = array();
+}
+
 class PurchaseController extends BaseController {
 
 	public function purchase()
@@ -26,31 +37,29 @@ class PurchaseController extends BaseController {
 		// The amount you want to charge, in cents.
 		$total_in_cents = 500;
 
-
 	    // returns customer object on success, false on failure
-		$customer = StripeHelper::create_customer($email, $stripe_token, $message);
+		$customer = StripeHelper::create_customer($email, $token, $message);
 
 		if ($customer) {
-
 		    // returns charge object on success, false on failure
 			$charge = StripeHelper::charge_card($email, $customer->id, $total_in_cents, $message);
-
+			
 			if ($charge->paid) {
 				// Store the order in an `orders` table
 				// Assuming this table has `id` column (AI, PK), this will be the foreign key in credit_cards table (see below)
 				$order = Order::create(array(
-					'user_id'		=> isset($user->id) ? $user->id : 'N/A', // Foreign key for users table
+					'user_id'		=> isset($user->id) ? $user->id : 1, // Foreign key for users table
 					'product_id'	=> 'Your product id here', // Foreign key for your products table
                     'currency'  	=> $charge->currency,
                     'amount'    	=> $charge->amount,
-                    'paid'    		=> (string)$charge->paid,
+                    'paid'    		=> $charge->paid,
                 ));
 
                 if ($order) {
                 	// Store the credit card usage in a `credit_cards` table
                 	$card = Credit_Card::create(array(
 	                    'order_id' 		=> $order->id, // Foreign key for orders table
-						'user_id'		=> isset($user->id) ? $user->id : 'N/A', // Foreign key for users table
+						'user_id'		=> isset($user->id) ? $user->id : 1, // Foreign key for users table
 	                    'processor' 	=> 'stripe',
 	                    'charge_id'		=> $charge->id,
 	                    'card_id'		=> $charge->card->id, // this changes with every charge, despite using the same card
@@ -60,6 +69,8 @@ class PurchaseController extends BaseController {
 	                    'exp_year'		=> $charge->card->exp_year,
 	                    'fingerprint'	=> $charge->card->fingerprint, // this is a constant, unique identifer of a given credit card
                 	));
+
+                	echo 'Charged card ending in ' . $charge->card->last4 . ' for ' . $charge->amount . ' cents!';
                 }      
 			}
 		}

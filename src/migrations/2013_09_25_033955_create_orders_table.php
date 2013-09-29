@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration {
 				$table->string('product_id')->length(50);
 				$table->string('currency')->length(50);
 				$table->integer('amount');
-				$table->string('paid')->length(50);
+				$table->smallInteger('paid');
 				$table->timestamps();
 			});
 		} else {

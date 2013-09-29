@@ -12,6 +12,13 @@
 
   <div class="form-row">
     <label>
+      <span>Email</span>
+      <input type="text" size="20" name="email" value="anthonytrading81@gmail.com"/>
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
       <span>Card Number</span>
       <input type="text" size="20" value="4242424242424242" data-stripe="number"/>
     </label>

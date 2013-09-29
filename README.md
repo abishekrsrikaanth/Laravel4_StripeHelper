@@ -76,6 +76,7 @@ php artisan migrate --package="anthonyvipond/stripehelper"
 ### Configuration
 
 Once you have published the configuration files, you can set your API and Publishable Key in `/app/config/packages/anthonyvipond/stripehelper/stripe.php`:
+
 If are Canadian, Irish, or English, update your currency here as necessary.
 
 ~~~

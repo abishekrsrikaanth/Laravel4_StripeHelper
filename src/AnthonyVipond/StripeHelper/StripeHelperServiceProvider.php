@@ -21,8 +21,8 @@ class StripeHelperServiceProvider extends ServiceProvider {
 	{
 		$this->package('anthonyvipond/stripehelper');
 
-		// Set the Stripe API key.
-		Stripe::setApiKey($this->app['config']->get('stripehelper::stripe.api_key'));
+		// Set the stripe api key.
+		Stripe::setApiKey($this->app['config']->get('packages/AnthonyVipond/StripeHelper/stripe.api_key'));
 	}
 
 	/**
