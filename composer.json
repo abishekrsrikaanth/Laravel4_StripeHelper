@@ -1,5 +1,6 @@
 {
     "name": "anthonyvipond/stripehelper",
+    "type": "library",
     "description": "Stripe.com Helper for Laravel 4",
     "authors": [
         {
@@ -7,6 +8,9 @@
             "email": "anthonytrading81@gmail.com"
         }
     ],
+    "keywords": ["Stripe","Laravel","Stripe.com","Laravel 4"],
+    "homepage": "http://github.com/AnthonyVipond/Laravel4_StripeHelper",
+    "license": "MIT",
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.0.x",
