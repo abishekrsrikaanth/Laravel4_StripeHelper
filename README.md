@@ -1,4 +1,4 @@
-StripeHelper for Laravel 4
+##StripeHelper for Laravel 4
 ==============
 
 Requires the Stripe.com PHP Library and a helper class for Stripe properties and methods. More to come.
@@ -108,12 +108,16 @@ StripeHelper::charge_card( $email, $customer_id, $price_in_cents, &$message = ''
 
 ### Sample Controller, View, and Route methods to get you rolling
 
-# Copy from src/Controllers/purchase.php into your app/controller/purchase.php
+##### -Copy from src/Controllers/purchase.php into your app/controller/purchase.php
 
-# Copy from src/Views/purchase.blade.php into your app/views/purchase.blade.php
+##### -Copy from src/Views/purchase.blade.php into your app/views/purchase.blade.php
 
-# Copy route invocations from src/routes.php into your routes.php
+##### -Copy route invocations from src/routes.php into your routes.php
 
 
 
-### Review all package code inside /AnthonyVipond/StripeHelper/SRC/ and /AnthonyVipond/StripeHelper/Public/
+### Review all package code inside:
+
+#### /AnthonyVipond/StripeHelper/SRC/ 
+#### and 
+#### /AnthonyVipond/StripeHelper/Public/
