@@ -58,7 +58,7 @@ There are three lines, they are marked clearly with comments. Update them as nec
 
 ### Run Migrations
 
-# Note on Migrations:
+Note on Migrations:
 
 You must not have tables currently named `credit_cards`, `orders` or `payment_errors`
 If you do, that's fine, just change the migration table names/fields in /vendor/anthonyvipond/stripehelper/src/migrations as necessary
