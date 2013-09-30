@@ -1,4 +1,4 @@
-##StripeHelper for Laravel 4
+StripeHelper for Laravel 4
 ==============
 
 Requires the Stripe.com PHP Library and has a class for working with Stripe. Comes with sample controller and view, too!
