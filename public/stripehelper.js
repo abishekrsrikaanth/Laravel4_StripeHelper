@@ -1,6 +1,6 @@
 jQuery(function($) {
 
-	Stripe.setPublishableKey('Your_Publishable_Key_Goes_Here'); // EDIT THIS LINE!!!
+	Stripe.setPublishableKey('Your_Publishable_Key_Goes_Here'); // EDIT THIS LINE!!! starts with pk_...
 
 	var stripeResponseHandler = function(status, response) {
 		var $form = $('#payment-form'); // If your form id is not $payment-form, update as necessary here

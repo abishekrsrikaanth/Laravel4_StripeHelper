@@ -71,7 +71,7 @@ Check the commented lines. Update them as necessary.
 Note on Migrations:
 
 You must not have tables currently named `credit_cards`, `orders` or `payment_errors` in your database.
-If you do not, that's fine, just change the migration table names/fields in /vendor/anthonyvipond/stripehelper/src/migrations as necessary.
+If you do, that's fine, just change the migration table names/fields in /vendor/anthonyvipond/stripehelper/src/migrations as necessary.
 You can also choose to not run migrations at all if you do not want any database help.
 
 ~~~
@@ -120,11 +120,11 @@ StripeHelper::charge_card( $email, $customer_id, $price_in_cents, &$message = ''
 
 ### Sample Controller, View, and Route methods to get you rolling
 
-* Copy from src/Controllers/PurchaseController.php into your app/controller/PurchaseController.php
+* Copy from /vendors/AnthonyVipond/src/Controllers/PurchaseController.php into your app/controller/PurchaseController.php
 
-* Copy from src/Views/purchase.blade.php into your app/views/purchase.blade.php
+* Copy from /vendors/AnthonyVipond/src/Views/purchase.blade.php into your app/views/purchase.blade.php
 
-* Copy route invocations from src/routes.php into your routes.php
+* Copy route invocations from /vendors/AnthonyVipond/src/routes.php into your routes.php
 
 
 
